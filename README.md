@@ -1,5 +1,5 @@
 # Brothers in Arms: Hell's Highway Config
-**Created by /u/Sassanix**
+
 
 This custom configuration is designed to enhance your gaming experience by optimizing graphics, audio, input, and overall performance. The tweaks improve ultra-wide monitor support, refine visual effects, and offer smoother gameplay. Below you’ll find detailed instructions on how to install the config and additional recommendations to further enhance the game.
 
