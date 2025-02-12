@@ -39,7 +39,7 @@ This custom configuration is designed to enhance your gaming experience by optim
    - For further adjustments and game data tweaks, refer to the [PCGamingWiki guide](https://www.pcgamingwiki.com/wiki/Brothers_in_Arms:_Hell's_Highway#Game_data).
 
 5. **Optional – Enhance Visuals with Shaders:**
-   - To further improve graphics, consider using advanced shaders such as DPX and Levels.
+   - To further improve graphics, consider using advanced shaders such as DPX, Adaptive Sharpen and Levels.
    - Visit [Reshade](https://reshade.me/) to download and apply your preferred shader presets.
 
 ---
