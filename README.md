@@ -7,6 +7,8 @@ This custom configuration is designed to enhance your gaming experience by optim
 
 ![15390_44](https://github.com/user-attachments/assets/d236fc6a-b23e-4b36-8197-32ddec6f6bba)
 ![15390_43](https://github.com/user-attachments/assets/5e730e5d-87c1-4b1d-959f-5e53a2adfd75)
+![20250212143327_1](https://github.com/user-attachments/assets/41ca94a1-a3d4-437f-8fa5-e2da4fc6ad44)
+
 
 ---
 
