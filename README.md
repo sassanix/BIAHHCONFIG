@@ -3,6 +3,11 @@
 
 This custom configuration is designed to enhance your gaming experience by optimizing graphics, audio, input, and overall performance. The tweaks improve ultra-wide monitor support, refine visual effects, and offer smoother gameplay. Below you’ll find detailed instructions on how to install the config and additional recommendations to further enhance the game.
 
+## Screenshots
+
+![15390_44](https://github.com/user-attachments/assets/d236fc6a-b23e-4b36-8197-32ddec6f6bba)
+![15390_43](https://github.com/user-attachments/assets/5e730e5d-87c1-4b1d-959f-5e53a2adfd75)
+
 ---
 
 ## Key Enhancements
