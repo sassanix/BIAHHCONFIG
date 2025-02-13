@@ -28,7 +28,7 @@ This configuration enhances your gaming experience by:
   
 - **Enhanced Graphics & Visual Quality:**
   - Upgraded texture streaming and lighting/shadow settings.
-  - Adjusted BaseCompat.ini to properly recognize and leverage your RTX 3090 and AMD Ryzen 7 5800X.
+  - Adjusted BaseCompat.ini to properly recognize and leverage my RTX 3090 and AMD Ryzen 7 5800X, please adjust the Basecompat.ini to your hardware.
   
 - **Optimized Combat Settings:**
   - Added custom sections in BaseGame.ini ([CombatEffects], [CombatSimulation]) to maximize combat visual effects and simulation.
@@ -37,7 +37,7 @@ This configuration enhances your gaming experience by:
   - Fine-tuned configurations in BaseInput.ini and BaseUI.ini ensure responsive controls and a clear, well-scaled interface.
 
 - **Improved Hardware Detection:**
-  - BaseCompat.ini now includes revised thresholds for CPU speed, memory, and a dedicated entry for the RTX 3090 (Device ID 0x2204), please add your own by using Gpu-z.
+  - BaseCompat.ini now includes revised thresholds for CPU speed, memory, and a dedicated entry for the RTX 3090 (Device ID 0x2204), please add your own by using Gpu-Z.
 
 ---
 
