@@ -38,6 +38,9 @@ This configuration enhances your gaming experience by:
 
 - **Improved Hardware Detection:**
   - BaseCompat.ini now includes revised thresholds for CPU speed, memory, and a dedicated entry for the RTX 3090 (Device ID 0x2204), please add your own by using Gpu-Z.
+ 
+- **Enhanced Loading Performanc:**
+ -Optimized asset streaming settings minimize load times by fully utilizing modern NVMe drives and SSD storage.  
 
 ---
 
