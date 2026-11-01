@@ -16,11 +16,18 @@ Two hard reasons, not a choice:
 
 Download both from Nexus Mods (free account required to download):
 
-- World overhaul: 2,818 textures rebuilt at up to 4096x4096, about 7.2 GB.
-  Search Nexus Mods, Brothers in Arms: Hell's Highway, for the full HD
-  texture overhaul (uploaded September 2026).
-- Weapons: 4K upscaled textures for every weapon, about 392 MB, same
-  section of the site.
+- World overhaul: GrimReaper2121's BIAHH HD World 2.0, 3,165 textures
+  rebuilt, current file about 12.7 GB (the original 1.0 from September
+  2026 was 2,818 textures, 7.2 GB, and is kept on the page as an
+  archived file).
+  https://www.nexusmods.com/brothersinarmshellshighway/mods/13
+- Weapons: GrimReaper2121's HD Weapons, current file about 511 MB.
+  Note the install change: 1.0 installed with TFC Installer, 2.0
+  installs with the Brothers in Arms Mod Manager instead (next link).
+  If 1.0 is installed, uninstall it with TFC Installer first.
+  https://www.nexusmods.com/brothersinarmshellshighway/mods/18
+- Brothers in Arms Mod Manager (needed for the weapons pack 2.0):
+  https://www.nexusmods.com/brothersinarmshellshighway/mods/17
 - Game page: https://www.nexusmods.com/brothersinarmshellshighway
 
 You also need:
@@ -32,7 +39,10 @@ You also need:
 Install order matters: this repo's config first (see the main README),
 then the Large Address Aware patch, then the packs, then the PoolSize
 override. The helper scripts on this page do steps 2 and 4 for you and
-walk you through step 3.
+walk you through step 3. The scripts drive TFC Installer, which is the
+install path for the world pack and for weapons pack 1.0; for weapons
+pack 2.0, follow the Mod Manager instructions on its Nexus page after
+the same preparation steps.
 
 ## Windows
 

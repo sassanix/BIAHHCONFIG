@@ -17,10 +17,13 @@ anything.
 ### 2. Install an existing HD pack (recommended)
 Since September 2026 there are real packs on Nexus Mods for this game:
 
-- A full world overhaul: 2,818 textures rebuilt at up to 4096x4096,
-  about 7.2 GB, uploaded 17 September 2026.
-- A weapons pack: 4K upscaled textures for every weapon, first and third
-  person, about 392 MB, installed with TFC Installer.
+- A full world overhaul: GrimReaper2121's BIAHH HD World 2.0, 3,165
+  textures rebuilt, about 12.7 GB, at
+  https://www.nexusmods.com/brothersinarmshellshighway/mods/13
+- A weapons pack: GrimReaper2121's HD Weapons, about 511 MB, at
+  https://www.nexusmods.com/brothersinarmshellshighway/mods/18
+  (version 1.0 installed with TFC Installer; 2.0 uses the Brothers in
+  Arms Mod Manager, mods/17 on the same site).
 
 Both install through TFC Installer for UE2/UE3, which injects the new
 textures into the game's .tfc texture file caches. Two things in this repo
