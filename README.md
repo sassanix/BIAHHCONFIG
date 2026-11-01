@@ -1,96 +1,86 @@
-# Brothers in Arms: Hell's Highway Config (v1.0)
+# Brothers in Arms: Hell's Highway Config (v2.0)
 
-Welcome to the Version 1 release of this custom configuration for Brothers in Arms: Hell's Highway. This release is engineered to unlock the full potential of high-end systems (Up to 24 GB VRAM, and 32 GB RAM) and optimize gameplay on ultra-wide monitors (3440×1440).
+A corrected and tightened configuration for Brothers in Arms: Hell's Highway
+(Unreal Engine 3, DirectX 9), tuned for high-end PCs and ultrawide
+3440x1440 displays.
 
-## Screenshots
+v2 is an audit of v1, not just a retune. Large parts of v1 set values the
+engine never reads, or values it cannot honour (a 24 GB texture pool in a
+32-bit process, 8192 px texture groups in an engine capped at 4096). v2
+keeps everything that worked, removes everything that did not, and says so
+in AUDIT.md.
 
-![15390_44](https://github.com/user-attachments/assets/d236fc6a-b23e-4b36-8197-32ddec6f6bba)
-![15390_43](https://github.com/user-attachments/assets/5e730e5d-87c1-4b1d-959f-5e53a2adfd75)
-![20250212143327_1](https://github.com/user-attachments/assets/41ca94a1-a3d4-437f-8fa5-e2da4fc6ad44)
+## What actually improves the picture
 
----
+- Full authored texture resolution at all distances (LODBias=0,
+  MaxLODSize=4096, the UE3 maximum), 16x anisotropic filtering.
+- A texture streaming pool sized for a 32-bit process: 1024 MB stock,
+  2048 MB with the HD override in user-config/.
+- Real shadow controls in the section the engine reads them from
+  (MaxShadowResolution=2048, hardware shadow filtering).
+- Frame rate smoothed and capped at 60 by default. Above 60 FPS this game
+  increases weapon spread and player damage taken (PCGamingWiki), so the
+  cap is a gameplay fix, not a performance limit. The comment in
+  BaseEngine.ini shows how to uncap.
+- Mouse smoothing off. UI scaling back to 1.0. Debug overlays off.
+- Hardware detection extended: RTX 3060 Ti through RTX 5090 added to
+  BaseCompat.ini at the top tier, next to the RTX 3090 from v1.
 
-## Overview
+## HD textures
 
-This configuration enhances your gaming experience by:
-- **Optimizing Graphics & Visuals:** Improved texture streaming, advanced shadow filtering, and optimized lighting settings deliver richer, more immersive visuals.
-- **Ultra-Wide Monitor Support:** Adjusted Field-of-View (FOV) and UI scaling ensure a flawless display on ultrawide screens.
-- **Enhanced Combat & Gameplay:** Custom combat tweaks integrated in BaseGame.ini boost visual effects, precise hit detection, dynamic ragdoll physics, and smarter AI.
-- **Optimized Audio & Input:** Fine-tuned audio settings and responsive input bindings provide a more engaging and fluid gameplay experience.
-- **Robust Performance:** Tweaks across multiple configuration files ensure stability and peak performance on high-end hardware.
+A config cannot make textures high definition, it can only stop the engine
+downsampling them. For real HD textures, install a texture pack: since
+September 2026 Nexus Mods hosts a full world overhaul (2,818 textures, up
+to 4096x4096) and a 4K weapons pack for this game, both installed with
+TFC Installer. Full explanation, limits and the do-it-yourself pipeline
+are in HD-TEXTURES.md. If you install a pack, also apply the override in
+user-config/ and a 4 GB patch to the game executable.
 
----
+## Installation
 
-## Key Enhancements
+Important: Base*.ini files are templates. The game reads Sumac*.ini files
+in your Documents folder, generated from the Base files on first run. If
+you have run the game before, step 3 is the one that matters.
 
-- **Ultra-Wide Monitor Support:**
-  - Enhanced FOV and UI scaling tailored for 3440×1440 displays.
-  
-- **Enhanced Graphics & Visual Quality:**
-  - Upgraded texture streaming and lighting/shadow settings.
-  - Adjusted BaseCompat.ini to properly recognize and leverage my RTX 3090 and AMD Ryzen 7 5800X, please adjust the Basecompat.ini to your hardware.
-  
-- **Optimized Combat Settings:**
-  - Added custom sections in BaseGame.ini ([CombatEffects], [CombatSimulation]) to maximize combat visual effects and simulation.
-  
-- **Optimized Audio & Input:**
-  - Fine-tuned configurations in BaseInput.ini and BaseUI.ini ensure responsive controls and a clear, well-scaled interface.
+1. Back up both folders below before changing anything.
+2. Copy the Base*.ini files from this repo into:
+   <SteamLibrary>\steamapps\common\Brothers in Arms Hells Highway\Engine\Config
+3. Then either:
+   - Delete SumacEngine.ini, SumacGame.ini, SumacInput.ini and SumacUI.ini
+     in Documents\My Games\BIA Hells Highway\SumacGame\Config\ and let the
+     game rebuild them from the new Base files on next launch, or
+   - Edit your existing Sumac files with the same values by hand.
+4. Optional, HD packs only: merge user-config\SumacEngine.ini into your
+   SumacEngine.ini after step 3.
+5. For anti-aliasing that actually works in this DirectX 9 engine, force
+   SGSSAA in NVIDIA Profile Inspector (compatibility flag 0x000010C1), see
+   PCGamingWiki. The in-game MaxMultisamples value alone does little.
+6. FOV: the durable method is the PCGamingWiki key binding fix in
+   SumacInput.ini (FOV command on zoom release, F2 resets FOV for
+   cutscenes). The FOVAngle value in BaseGame.ini is kept at 120.
 
-- **Improved Hardware Detection:**
-  - BaseCompat.ini now includes revised thresholds for CPU speed, memory, and a dedicated entry for the RTX 3090 (Device ID 0x2204), please add your own by using Gpu-Z.
- 
-- **Enhanced Loading Performanc:**
-  - Optimized asset streaming settings minimize load times by fully utilizing modern NVMe drives and SSD storage.  
+An install script that does steps 1 to 3 with backups is in install.ps1.
 
----
+## Files
 
-## Installation Instructions
+- BaseEngine.ini: engine, streaming, system settings. Heavily corrected.
+- BaseGame.ini: gameplay defaults. The invented combat sections from v1
+  are removed, with a note explaining why.
+- BaseCompat.ini: hardware scoring, modern GPUs added.
+- BaseInput.ini: stock bindings, mouse smoothing off.
+- BaseUI.ini: UI defaults, debug overlays off, scaling 1.0.
+- user-config/SumacEngine.ini: HD texture pack override (PoolSize=2048).
+- AUDIT.md: every v1 problem found, and what changed.
+- HD-TEXTURES.md: how HD textures actually work for this game.
+- install.ps1: backup and install helper (Windows).
 
-1. **Locate the Config Folder:**
-   - On Steam, navigate to:
-     ```
-     X:\SteamLibrary\steamapps\common\Brothers in Arms Hells Highway\Engine\Config
-     ```
+## Credits
 
-2. **Backup Existing Files:**
-   - Back up your current configuration files (e.g., BaseEngine.ini, BaseGame.ini, BaseCompat.ini, BaseInput.ini, BaseUI.ini) so you can restore them if needed.
-
-3. **Replace the Config Files:**
-   - Copy the provided configuration files into the folder, replacing the existing ones.
-
-4. **Apply Additional Tweaks:**
-   - For further adjustments and game data tweaks, refer to the [PCGamingWiki guide](https://www.pcgamingwiki.com/wiki/Brothers_in_Arms:_Hell's_Highway#Game_data).
-
-5. **Optional – Enhance Visuals with Shaders:**
-   - To further improve graphics, consider using advanced shaders such as DPX, Adaptive Sharpen, and Levels.
-   - Visit [Reshade](https://reshade.me/) to download and apply your preferred shader presets.
-
----
-
-## Files Included
-
-- **BaseEngine.ini:** Enhanced engine settings, texture streaming, lighting, and more.
-- **BaseGame.ini:** Custom combat and gameplay tweaks for high-end visuals and simulation.
-- **BaseCompat.ini:** Adjusted hardware detection settings for proper classification of high-end components.
-- **BaseInput.ini & BaseUI.ini:** Fine-tuned input bindings and UI scaling optimized for ultra-wide displays.
-- **Additional Config Files:** Editor settings and key-binding configurations.
-
----
-
-## Credits & Resources
-
-- **Config by:** /u/Sassanix
-- **Additional Tweaks & Game Data:**  
-  [PCGamingWiki - Brothers in Arms: Hell's Highway](https://www.pcgamingwiki.com/wiki/Brothers_in_Arms:_Hell's_Highway#Game_data)
-- **Shader Enhancements:**  
-  [Reshade](https://reshade.me/)
-
----
+- Config by /u/Sassanix, v2 audit and corrections with Muse.
+- Game data and fixes: PCGamingWiki, Brothers in Arms: Hell's Highway.
+- Texture support reference: Epic Games UDK documentation,
+  Texture Support and Settings.
 
 ## License
 
-This project is released under the MIT License. See the [LICENSE](LICENSE) file for details.
-
----
-
-Enjoy your enhanced gaming experience with improved visuals, optimized performance, and a smoother overall gameplay experience!
+MIT, see LICENSE.
