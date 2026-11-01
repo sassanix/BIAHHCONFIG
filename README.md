@@ -34,7 +34,10 @@ September 2026 Nexus Mods hosts a full world overhaul (2,818 textures, up
 to 4096x4096) and a 4K weapons pack for this game, both installed with
 TFC Installer. Full explanation, limits and the do-it-yourself pipeline
 are in HD-TEXTURES.md. If you install a pack, also apply the override in
-user-config/ and a 4 GB patch to the game executable.
+user-config/ and a 4 GB patch to the game executable. Step by step
+instructions for Windows and for Linux (Steam Proton), plus helper
+scripts that do the backups, the 4 GB patch and the override for you,
+are in textures/README.md.
 
 ## Installation
 
@@ -70,6 +73,8 @@ An install script that does steps 1 to 3 with backups is in install.ps1.
 - BaseInput.ini: stock bindings, mouse smoothing off.
 - BaseUI.ini: UI defaults, debug overlays off, scaling 1.0.
 - user-config/SumacEngine.ini: HD texture pack override (PoolSize=2048).
+- textures/: HD pack install guide for Windows and Linux, an install
+  helper for each, and patch-laa.py (sets the 4 GB flag on the game exe).
 - AUDIT.md: every v1 problem found, and what changed.
 - HD-TEXTURES.md: how HD textures actually work for this game.
 - install.ps1: backup and install helper (Windows).

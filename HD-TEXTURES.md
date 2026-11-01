@@ -35,6 +35,8 @@ matter for those packs:
 
 Browse the packs: https://www.nexusmods.com/brothersinarmshellshighway
 TFC Installer: search Nexus Mods for "TFC Installer for UE2-UE3".
+Full step by step install instructions for Windows and Linux, with
+helper scripts, are in textures/README.md.
 
 ### 3. Build your own pack
 The pipeline the packs above use, if you want to make your own:
